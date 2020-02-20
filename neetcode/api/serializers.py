@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from .models import Data
 
+## convert sql to json and vice versa
+
 # Data Serializer
 class DataSerializer(serializers.ModelSerializer):
   class Meta:
