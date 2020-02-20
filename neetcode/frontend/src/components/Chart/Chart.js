@@ -1,7 +1,6 @@
 import React from "react";
 import Plot from "react-plotly.js";
 import style from "styled-components";
-
 class Chart extends React.Component {
   render() {
     return (
