@@ -41,7 +41,7 @@ export class Navbar extends Component {
               <a className="nav-item nav-link" href="/about">
                 about/contact
               </a>
-              <a className="nav-item nav-link" href="#">
+              <a className="nav-item nav-link" href="/chart">
                 Pricing
               </a>
               <a className="nav-item nav-link disabled" href="#">

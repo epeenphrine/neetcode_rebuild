@@ -6,7 +6,7 @@ from knox import views as knox_views
 app_name = 'api'
 
 router = routers.DefaultRouter()
-router.register('api/data', DataViewset, 'api')
+router.register('data', DataViewset, 'api')
 
 urlpatterns = [
     path('auth', include('knox.urls')),

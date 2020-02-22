@@ -9,7 +9,7 @@ from .models import Data
 class DataSerializer(serializers.ModelSerializer):
   class Meta:
     model = Data
-    fields = '__all__'
+    fields = ('ticker', 'x', 'y')
 
 # User Serializer
 class UserSerializer(serializers.ModelSerializer):

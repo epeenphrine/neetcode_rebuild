@@ -6,7 +6,7 @@ from rest_framework.response import Response
 
 
 
-#data view
+#data viewset
 class DataViewset(viewsets.ModelViewSet):
     queryset = Data.objects.all()
     permission_classes= [
@@ -14,12 +14,8 @@ class DataViewset(viewsets.ModelViewSet):
     ]
 
     serializer_class = DataSerializer
+    http_method_names = ['get']
 
-    def get_queryset(self):
-        return self.request.user.api.all()
-
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
 
 # register api
 class RegisterAPI(generics.GenericAPIView):
