@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 const navbarStyle = {
-  height: "100px",
-  fontSize: '20px'
+  fontSize: '20px',
 };
 const logoStyle = {
   fontSize: '30px'

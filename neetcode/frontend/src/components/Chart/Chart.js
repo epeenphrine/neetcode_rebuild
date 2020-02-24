@@ -29,18 +29,20 @@ class Chart extends React.Component {
                 data={[
                   {
                     x: this.state.x,
-                    y: this.state.y,                  type: "scatter",
+                    y: this.state.y,                  
+                    type: "scatter",
                     mode: "lines+markers",
                     marker: { color: "red" }
                   },
                   { type: "bar", x: this.state.x, y: this.state.y }
                 ]}
-                layout={{ width: 500, height: 500, title: this.state.ticker }}
+                layout={{ title: this.state.ticker, width:400, height:400}}
+                config = {{ response: true}}
               />
             </div>
           </div>
         </div>
-        <div className="col-sm-6">
+        <div className="col-sm-3">
           <div className="card">
             <div className="card-body">
               <Plot
@@ -54,7 +56,8 @@ class Chart extends React.Component {
                   },
                   { type: "bar", x: [1, 2, 3, 4, 5, 6], y: [2, 6, 3, 0, 5, 10] }
                 ]}
-                layout={{ width: 500, height: 500, title: "A Fancy Plot" }}
+                layout={{ title: "A Fancy Plot", width:400, height:400 }}
+                config = {{responsive: true}}
               />
             </div>
           </div>

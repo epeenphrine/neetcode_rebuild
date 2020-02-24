@@ -9,6 +9,8 @@ import Chart from "./Chart/Chart";
 import About from "./pages/About";
 import Home from "./pages/Home";
 
+//bootstrap stuff
+import { Button } from 'react-bootstrap'
 //router stuff
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -25,6 +27,7 @@ export class App extends Component {
               <Route path="/chart" exact component={Chart} />
             </Switch>
           </div>
+          
         </div>
       </Router>
     );
