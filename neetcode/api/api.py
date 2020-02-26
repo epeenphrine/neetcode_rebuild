@@ -1,6 +1,6 @@
-from .models import Data
+from .models import Data, ItemsToScrape, About
 from rest_framework import viewsets, permissions, generics
-from .serializers import UserSerializer, RegisterSerializer, LoginSerializer, DataSerializer
+from .serializers import UserSerializer, RegisterSerializer, LoginSerializer, DataSerializer, AboutSerializer
 from knox.models import AuthToken
 from rest_framework.response import Response
 
@@ -15,6 +15,14 @@ class DataViewset(viewsets.ModelViewSet):
 
     serializer_class = DataSerializer
     http_method_names = ['get']
+
+class AboutViewset(viewsets.ModelViewSet):
+  queryset = About.objects.all()
+  permission_class = [
+    permissions.AllowAny
+  ]
+  serializer_class = AboutSerializer
+  http_method_names = ['get']
 
 
 # register api

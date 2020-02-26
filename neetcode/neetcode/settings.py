@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'api',
     'frontend',
     'knox',
-    'main',
 ]
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',)

@@ -6,7 +6,7 @@ import React, { Component } from "react";
 import Navbar from "./layout/Navbar";
 import Plot from "react-plotly.js";
 import Chart from "./Chart/Chart";
-import About from "./pages/About";
+import About from "./pages/about/About";
 import Home from "./pages/Home";
 
 //bootstrap stuff

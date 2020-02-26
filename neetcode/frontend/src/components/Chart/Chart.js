@@ -2,6 +2,7 @@ import React from "react";
 import Plot from "react-plotly.js";
 import style from "styled-components";
 import axios from 'axios'
+import Search from './Search'
 
 class Chart extends React.Component {
   state = {
@@ -20,9 +21,9 @@ class Chart extends React.Component {
     console.log(this.state.x)
     console.log(this.state.y)
     return (
-
       <div className="row">
         <div className="col-sm-6">
+        <Search />
           <div className="card">
             <div className="card-body">
             <Plot
@@ -42,7 +43,7 @@ class Chart extends React.Component {
             </div>
           </div>
         </div>
-        <div className="col-sm-3">
+        <div className="col-sm-6">
           <div className="card">
             <div className="card-body">
               <Plot
