@@ -40,10 +40,10 @@ export class Navbar extends Component {
                   github.com/epeenphrine
                   <span className="sr-only">(current)</span>
                 </a>
-                <a className="nav-item nav-link" href="/about">
+                <a className="nav-item nav-link current" href="/about">
                   about/contact
                 </a>
-                <a className="nav-item nav-link" href="/chart">
+                <a className="nav-item nav-link current" href="/chart">
                   Demo
                 </a>
                 <a className="nav-item nav-link disabled" href="#">

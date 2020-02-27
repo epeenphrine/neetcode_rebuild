@@ -1,36 +1,42 @@
 import React, { Component } from "react";
-import axios from "axios";
-import Plot from "react-plotly.js";
 
 import Cards from "./Cards";
 
+import { connect } from "react-redux";
+import propTypes, { string } from "prop-types";
+import { getAbout } from "../../../actions/about";
 export class About extends Component {
-  state = {
-    posts: [],
-    titles: []
+  //type of data
+  static propTypes = {
+    about: propTypes.string,
+    email: propTypes.string,
+    phone: string
   };
+  //call here to mount the api
   componentDidMount() {
-    axios.get("/api/about/").then(response => {
-      this.setState({
-        posts: response.data[0],
-        titles: Object.keys(response.data[0])
-      });
-      //need to JSON parse when setting state
-    });
+    this.props.getAbout();
   }
+
   render() {
-    console.log(this.state.titles)
-    return <div>
-        <Cards title= {"Email"} 
-        about={this.state.posts.email}/>
-        <Cards 
-          title={"Phone"}
-        about= {this.state.posts.phone}/>
-        <Cards 
-          title = {'About'}
-        about={this.state.posts.about}/>
-    </div>;
+    console.log(this.props.abouts)
+     const abouts = this.props.abouts.map( about => {
+
+        return <Cards key={'1'} title={about.about} about={about.about}/>
+     })
+    return (
+      <div>
+        <section>
+          {abouts}
+        </section>
+      </div>
+    );
   }
 }
-
-export default About;
+// do all adjusting of data here 
+const mapStateToProps = state => ({
+  abouts: state.about.about,
+  about: state.about.about.about,
+  email: state.about.about.email,
+  phone: state.about.about.phone,
+});
+export default connect(mapStateToProps, { getAbout })(About);

@@ -20,33 +20,30 @@ export class Search extends Component {
     event.preventDefault();
   }
   handleClick(event) {
-    this.setState({ value: event.target.value})
+    this.setState({ value: event.target.value });
   }
 
   render() {
     return (
       <div>
-        <form className="form-inline ">
-          <div className="form-group mx-sm-3 mb-2 py my-4">
-            <label for="inputPassword2" className="sr-only">
-              Ticker
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="inputPassword2"
-              placeholder="Ticker"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
+        <form>
+        <div className="input-group  mt-4 w-75 container-md">
+          <input
+            type="text"
+            className="form-control "
+            placeholder="Ticker"
+            aria-label="Ticker"
+            aria-describedby="basic-addon2"
+            value={this.state.value}
+            onChange={this.handleChange}
+            onSubmit={this.handleSubmit}
+          />
+          <div className="input-group-append">
+            <button className="btn btn-outline-secondary" type="submit" value='Submit'>
+              Search
+            </button>
           </div>
-          <button
-            type="submit"
-            className="btn btn-primary mb-2"
-            onClick={this.handleClick}
-          >
-            Search
-          </button>
+        </div>
         </form>
       </div>
     );

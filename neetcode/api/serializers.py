@@ -13,7 +13,7 @@ class AboutSerializer(serializers.ModelSerializer):
 class DataSerializer(serializers.ModelSerializer):
   class Meta:
     model = Data
-    fields = ('ticker', 'x', 'y')
+    fields = '__all__'
 
 # User Serializer
 class UserSerializer(serializers.ModelSerializer):

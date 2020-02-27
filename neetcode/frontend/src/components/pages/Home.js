@@ -1,35 +1,44 @@
-import React, { Component } from 'react'
-
+import React, { Component } from "react";
+import Cards from "./Cards";
 export class Home extends Component {
-    render() {
-        return ( <div className="row">
-        <div className="card w-75">
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              With supporting text below as a natural lead-in to additional
-              content.
-            </p>
-            <a href="#" className="btn btn-primary">
-              Button
-            </a>
+  render() {
+    const stuffs = [1, 2, 3, 4, 5, 6, 7, 8];
+    const items = stuffs.map(stuff => {
+      return (
+        <div className="col-sm-6">
+          <div className="album py-5 bg-light">
+            <Cards testing={stuff} />
           </div>
         </div>
-        <div className="card w-50">
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              With supporting text below as a natural lead-in to additional
-              content.
-            </p>
-            <a href="#" className="btn btn-primary">
-              Button
-            </a>
-          </div>
+      );
+    });
+    return (
+      <main>
+        <div>
+          <section className="jumbotron text-center">
+            <div className="container">
+              <h1>Album example</h1>
+              <p className="lead text-muted">
+                Something short and leading about the collection below—its
+                contents, the creator, etc. Make it short and sweet, but not too
+                short so folks don’t simply skip over it entirely.
+              </p>
+              <p>
+                <a href="#" className="btn btn-primary my-2">
+                  Main call to action
+                </a>
+                <a href="#" className="btn btn-secondary my-2">
+                  Secondary action
+                </a>
+              </p>
+            </div>
+          </section>
+
+          <div className="row">{items}</div>
         </div>
-      </div>
-        )
-    }
+      </main>
+    );
+  }
 }
 
-export default Home
+export default Home;
