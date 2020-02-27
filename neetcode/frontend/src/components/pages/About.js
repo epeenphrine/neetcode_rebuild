@@ -3,45 +3,32 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import propTypes, { string } from "prop-types";
 import { getAbout } from "../../actions/about";
+
+import axios from 'axios'
+
 export class About extends Component {
   //type of data
-  static propTypes = {
-    about: propTypes.string,
-    email: propTypes.string,
-    phone: string
-  };
+ state = {
+   about: [],
+ }
   //call here to mount the api
   componentDidMount() {
-    this.props.getAbout();
+    axios.get('/api/about/')
+    .then(res => {
+      this.setState({ about: res.data[0] })
+    })
   }
 
   render() {
-    console.log(this.props.abouts);
+    console.log(this.state.about)
     return (
-      <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header className="masthead mb-auto">
-          <div className="inner">
-            <h3 className="masthead-brand">Cover</h3>
-            <nav className="nav nav-masthead justify-content-center">
-              <a className="nav-link active" href="#">
-                Home
-              </a>
-              <a className="nav-link" href="#">
-                Features
-              </a>
-              <a className="nav-link" href="#">
-                Contact
-              </a>
-            </nav>
-          </div>
-        </header>
+      <div className="cover-fill d-flex w-100 h-100 p-3 mx-auto flex-column text-center bg-transparent align-content-center" >
+      
 
-        <main role="main" className="inner cover">
-          <h1 className="cover-heading">Cover your page.</h1>
+        <main role="main" className="inner cover my-auto">
+          <h1 className="cover-heading">FullStack Developer</h1>
           <p className="lead">
-            Cover is a one-page template for building simple and beautiful home
-            pages. Download, edit the text, and add your own fullscreen
-            background photo to make it your own.
+            {this.state.about.description}
           </p>
           <p className="lead">
             <a href="#" className="btn btn-lg btn-secondary">
@@ -63,11 +50,4 @@ export class About extends Component {
     );
   }
 }
-// do all adjusting of data here
-const mapStateToProps = state => ({
-  abouts: state.about.about,
-  about: state.about.about.about,
-  email: state.about.about.email,
-  phone: state.about.about.phone
-});
-export default connect(mapStateToProps, { getAbout })(About);
+export default About

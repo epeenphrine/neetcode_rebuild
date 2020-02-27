@@ -76,14 +76,22 @@ class ProjectsContent(models.Model):
 
 #About stuff 
 class About(models.Model):
-    email = models.CharField(max_length=200)
-    phone = models.CharField(max_length=200)
-    about = models.TextField("site description")
+    role = models.CharField(max_length=200)
+    description = models.TextField('Description')
+    projects = models.TextField("github URLS")
     
     class Meta:
-        verbose_name_plural = 'Site content / About'
+        verbose_name_plural = 'About Section'
     def __str__(self):
-        site_info = 'site info'
-        return site_info
+        return self.role 
 
+class AboutLanguage(models.Model):
+    role = models.ForeignKey(About, default='', verbose_name'about language', on_delete=models.SET_DEFAULT())
+    languages = models.CharField(max_length=200)
+    libraries = models.TextField('libraries')
 
+    class Meta:
+        vernose_name_plural = 'About Language'
+    
+    def __str__(self):
+        return self.languages
