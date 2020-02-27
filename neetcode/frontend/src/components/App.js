@@ -5,7 +5,7 @@ import React, { Component, Fragment } from "react";
 //component stuff
 import Navbar from "./layout/Navbar";
 import Chart from "./visualization/Chart";
-import About from "./pages/About";
+import About from "./pages/about/About";
 import Home from "./pages/Home";
 import Dashboard from './dashboard/Dashboard'
 
