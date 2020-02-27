@@ -1,10 +1,10 @@
-from .models import Data, ItemsToScrape, About
 from rest_framework import viewsets, permissions, generics
-from .serializers import UserSerializer, RegisterSerializer, LoginSerializer, DataSerializer, AboutSerializer
 from knox.models import AuthToken
 from rest_framework.response import Response
 
-
+from collections import namedtuple
+from .models import Data, ItemsToScrape, About 
+from .serializers import UserSerializer, RegisterSerializer, LoginSerializer, DataSerializer, AboutSerializer
 
 #data viewset
 class DataViewset(viewsets.ModelViewSet):
@@ -15,7 +15,7 @@ class DataViewset(viewsets.ModelViewSet):
 
     serializer_class = DataSerializer
     http_method_names = ['get']
-
+#About Viewset
 class AboutViewset(viewsets.ModelViewSet):
   queryset = About.objects.all()
   permission_class = [
@@ -23,8 +23,6 @@ class AboutViewset(viewsets.ModelViewSet):
   ]
   serializer_class = AboutSerializer
   http_method_names = ['get']
-
-
 # register api
 class RegisterAPI(generics.GenericAPIView):
   serializer_class = RegisterSerializer

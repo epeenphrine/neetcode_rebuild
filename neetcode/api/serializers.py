@@ -6,8 +6,10 @@ from .models import Data, About
 ## convert sql to json and vice versa
 # About Serializer
 class AboutSerializer(serializers.ModelSerializer):
+  '''about serializer'''
   class Meta:
     model = About
+
     fields = '__all__'
 # Data Serializer
 class DataSerializer(serializers.ModelSerializer):
