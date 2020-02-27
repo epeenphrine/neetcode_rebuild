@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Cards from "./Cards";
+import Card from "../card/Card";
 export class Home extends Component {
   render() {
     const stuffs = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -7,7 +7,7 @@ export class Home extends Component {
       return (
         <div className="col-sm-6">
           <div className="album py-5 bg-light">
-            <Cards testing={stuff} />
+            <Card testing={stuff} />
           </div>
         </div>
       );
