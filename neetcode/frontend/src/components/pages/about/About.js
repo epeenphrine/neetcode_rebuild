@@ -31,7 +31,7 @@ export class About extends Component {
     return (
       <div>
         <section className="jumbotron text-center bg-light">
-            <h1>contact me:</h1>
+            <h1 className='font-weight-bold'>contact me</h1>
             <h3>Email: donghyunwon610@gmail.com</h3>
             <h3>Phone: 646-580-7514</h3>
             <h3>
