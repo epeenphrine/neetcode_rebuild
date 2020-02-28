@@ -84,3 +84,28 @@ class About(models.Model):
         verbose_name_plural = 'About Role'
     def __str__(self):
         return self.role 
+
+class Language(models.Model):
+    language = models.CharField(max_length=200)
+    slug = models.CharField(max_length=200)
+
+class WebApp(models.Model):
+    webapp = models.CharField(max_length=200)
+    description = models.TextField('brief description')
+    languages = models.CharField(max_length=200)
+    libraries = models.TextField('Libraries used')
+    language_slug = models.CharField(max_length=200, default=1)
+    slug = models.CharField(max_length=200, default=1)
+
+##
+class Project(models.Model):
+    
+    project = models.CharField(max_length=200)
+    description = models.TextField('brief description')
+    libraries = models.TextField('Libraries used:')
+    language = models.CharField(max_length=200, default=1)
+    language_slug = models.CharField(max_length=200, default=1)
+    slug = models.CharField(max_length=200, default=1)
+
+    def __str__(self):
+        return self.project
