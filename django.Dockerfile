@@ -6,4 +6,4 @@ COPY ./ ./
 
 RUN pip install pipenv && pipenv install -r requirements.txt
 
-CMD cd neetcode && pipenv run python -u python manage.py runserver 0.0.0.0:8000 
+CMD cd neetcode && pipenv run python -u manage.py runserver 0.0.0.0:8000 

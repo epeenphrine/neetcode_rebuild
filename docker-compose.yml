@@ -13,4 +13,4 @@ services:
             context: .
             dockerfile: node.Dockerfile
         volumes:
-            -.:/neetcode/
+            - .:/neetcode/
