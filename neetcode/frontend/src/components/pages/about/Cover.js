@@ -9,14 +9,14 @@ export class Cover extends Component {
             <h1 className="cover-heading">{this.props.role}</h1>
             <p className="lead"></p>
             <p className="lead">
-              <h2> Languages : {this.props.languages}</h2>
+              <h2> {this.props.languages} </h2>
             </p>
           </main>
 
           <footer className="mastfoot mt-auto">
             <div className="inner">
               <p>
-                Libraries : {this.props.libraries}
+                {this.props.libraries}
               
               </p>
             </div>

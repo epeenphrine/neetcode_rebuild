@@ -38,7 +38,7 @@ export class About extends Component {
               GitHub: <a href="https://github.com/epeenphrine">https://github.com/epeenphrine</a>
             </h3>
             <p className="lead my-5">
-              I've listed Languages and Libraries i'm familiar with.
+              I do development to deployment. I've listed Languages and Libraries i'm familiar with.
             </p>
         </section>
 

@@ -8,9 +8,13 @@ services:
         - .:/neetcode/
         ports:
         - "8000:8000"
+        restart_policy:
+            condition: on-failure
     webpack:
         build:
             context: .
             dockerfile: node.Dockerfile
         volumes:
             - .:/neetcode/
+        restart_policy:
+            condition: on-failure 
