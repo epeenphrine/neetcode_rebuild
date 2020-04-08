@@ -1,5 +1,5 @@
 from rest_framework import routers
-from .api import DataViewset, RegisterAPI, LoginAPI, UserAPI, AboutViewset
+from .api import DataViewset, RegisterAPI, LoginAPI, UserAPI, AboutViewset, ProjectViewset
 from django.urls import path, include
 from knox import views as knox_views
 
@@ -8,6 +8,7 @@ app_name = 'api'
 router = routers.DefaultRouter()
 router.register('data', DataViewset, 'Data')
 router.register('about', AboutViewset, 'About')
+router.register('project', ProjectViewset, 'Project')
 urlpatterns = [
     path('auth', include('knox.urls')),
     path('auth/register', RegisterAPI.as_view()),

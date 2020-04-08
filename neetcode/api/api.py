@@ -3,9 +3,9 @@ from knox.models import AuthToken
 from rest_framework.response import Response
 
 from collections import namedtuple
-from .models import Data, ItemsToScrape, About 
-from .serializers import UserSerializer, RegisterSerializer, LoginSerializer, DataSerializer, AboutSerializer
-
+from .models import Data, ItemsToScrape, About, ProjectsContent
+from .serializers import UserSerializer, RegisterSerializer, LoginSerializer, DataSerializer, AboutSerializer, ProjectSerializer
+## VIEWSETS only get requests 
 #data viewset
 class DataViewset(viewsets.ModelViewSet):
     queryset = Data.objects.all()
@@ -23,6 +23,18 @@ class AboutViewset(viewsets.ModelViewSet):
   ]
   serializer_class = AboutSerializer
   http_method_names = ['get']
+
+#Project viewset
+class ProjectViewset(viewsets.ModelViewSet):
+  queryset = ProjectsContent.objects.all()
+  permission_class = [
+    permissions.AllowAny
+  ]
+  serializer_class = ProjectSerializer
+  http_method_names = ['get']
+
+
+## API (authentication)
 # register api
 class RegisterAPI(generics.GenericAPIView):
   serializer_class = RegisterSerializer

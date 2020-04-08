@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from .models import Data, About
+from .models import Data, About, ProjectsContent
 
 ## convert sql to json and vice versa
 # About Serializer
@@ -16,6 +16,12 @@ class DataSerializer(serializers.ModelSerializer):
   class Meta:
     model = Data
     fields = '__all__'
+
+class ProjectSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = ProjectsContent
+    fields = '__all__'
+
 
 # User Serializer
 class UserSerializer(serializers.ModelSerializer):
