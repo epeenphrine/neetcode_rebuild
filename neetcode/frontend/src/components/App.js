@@ -4,10 +4,10 @@ import React, { Component, Fragment } from "react";
 
 //component stuff
 import Navbar from "./layout/Navbar";
-import Plot from "react-plotly.js";
-import Chart from "./Chart/Chart";
+import Chart from "./visualization/Chart";
 import About from "./pages/about/About";
 import Home from "./pages/Home";
+import Dashboard from './dashboard/Dashboard'
 
 //bootstrap stuff
 import { Button } from "react-bootstrap";
@@ -28,6 +28,7 @@ export class App extends Component {
                   <Route exact path="/" component={Home} />
                   <Route path="/about" component={About} />
                   <Route path="/chart" exact component={Chart} />
+                  <Route path='/dash' exact component ={Dashboard} />
                 </Switch>
               </div>
           </Fragment>

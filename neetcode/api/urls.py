@@ -8,7 +8,6 @@ app_name = 'api'
 router = routers.DefaultRouter()
 router.register('data', DataViewset, 'Data')
 router.register('about', AboutViewset, 'About')
-
 urlpatterns = [
     path('auth', include('knox.urls')),
     path('auth/register', RegisterAPI.as_view()),

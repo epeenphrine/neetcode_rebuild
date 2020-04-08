@@ -1,42 +1,50 @@
 import React, { Component } from "react";
 
-import Cards from "./Cards";
+import axios from "axios";
 
-import { connect } from "react-redux";
-import propTypes, { string } from "prop-types";
-import { getAbout } from "../../../actions/about";
+import Cover from "./Cover";
+
 export class About extends Component {
   //type of data
-  static propTypes = {
-    about: propTypes.string,
-    email: propTypes.string,
-    phone: string
+  state = {
+    roles: []
   };
-  //call here to mount the api
+
   componentDidMount() {
-    this.props.getAbout();
+    axios.get("/api/about/").then(res => {
+      this.setState({ roles: res.data });
+    });
   }
-
   render() {
-    console.log(this.props.abouts)
-     const abouts = this.props.abouts.map( about => {
+    console.log(this.state);
+    const roles = this.state.roles.map(role => {
+      return (
+        <Cover
+          key={role.id}
+          role={role.role}
+          languages={role.languages}
+          libraries={role.libraries}
+        />
+      );
+    });
 
-        return <Cards key={'1'} title={about.about} about={about.about}/>
-     })
     return (
       <div>
-        <section>
-          {abouts}
+        <section className="jumbotron text-center bg-light">
+            <h1 className='font-weight-bold'>contact me</h1>
+            <h3>Email: donghyunwon610@gmail.com</h3>
+            <h3>Phone: 646-580-7514</h3>
+            <h3>
+              GitHub: <a href="https://github.com/epeenphrine">https://github.com/epeenphrine</a>
+            </h3>
+            <p className="lead my-5">
+              I've listed Languages and Libraries i'm familiar with.
+            </p>
         </section>
+
+        {roles}
       </div>
     );
   }
 }
-// do all adjusting of data here 
-const mapStateToProps = state => ({
-  abouts: state.about.about,
-  about: state.about.about.about,
-  email: state.about.about.email,
-  phone: state.about.about.phone,
-});
-export default connect(mapStateToProps, { getAbout })(About);
+export default About;
