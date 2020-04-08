@@ -1,10 +1,16 @@
 version: "3"
 services:
-    web:
+    django:
         build:
             context: .
-            dockerfile: Dockerfile
+            dockerfile: django.Dockerfile
         volumes:
         - .:/neetcode/
         ports:
         - "8000:8000"
+    webpack:
+        build:
+            context: .
+            dockerfile: node.Dockerfile
+        volumes:
+            -.:/neetcode/
