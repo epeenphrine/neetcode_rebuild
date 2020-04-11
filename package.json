@@ -14,6 +14,7 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
+    "acorn": ">=6.4.1",
     "babel-loader": "^8.0.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "file-loader": "^6.0.0",
@@ -22,8 +23,10 @@
     "webpack-cli": "^3.2.1"
   },
   "dependencies": {
+    "acorn": ">=6.4.1",
     "axios": "^0.18.1",
     "bootstrap": "^4.4.1",
+    "minimist": ">=1.2.3",
     "plotly.js": "^1.52.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
