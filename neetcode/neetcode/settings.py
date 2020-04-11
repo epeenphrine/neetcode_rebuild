@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from .prod_secret import SECRET_KEY
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -19,8 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# FOR DEVELOPMENT ..... SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '01no09g!71%t#n8ep)6wg^_h%^dptb=*6q1pvibg0r$wiq$em$'
+
+#FOR PRODUCTION
+#SECRET_KEY = SECRET_KEY
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -126,6 +131,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/neetcode/static/'
+STATIC_ROOT = BASE_DIR + '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/neetcode/media/'
+MEDIA_ROOT = BASE_DIR + '/media/'

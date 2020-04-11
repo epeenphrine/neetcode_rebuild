@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export class Cover extends Component {
   render() {
     return (
-      <div>
+      <div className="shadow">
         <div className="cover-fill d-flex w-100 h-100 p-3 mx-auto flex-column text-center bg-transparent align-content-center">
           <main role="main" className="inner cover my-auto">
             <h1 className="cover-heading">{this.props.role}</h1>

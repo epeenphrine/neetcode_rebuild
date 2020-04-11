@@ -8,6 +8,7 @@ import Chart from "./visualization/Chart";
 import About from "./pages/about/About";
 import Home from "./pages/Home";
 import Dashboard from './dashboard/Dashboard'
+import Test from './pages/Test'
 
 //bootstrap stuff
 import { Button } from "react-bootstrap";
@@ -29,6 +30,7 @@ export class App extends Component {
                   <Route path="/about" component={About} />
                   <Route path="/chart" exact component={Chart} />
                   <Route path='/dash' exact component ={Dashboard} />
+                  <Route path='/test' exact component ={Test} />
                 </Switch>
               </div>
           </Fragment>

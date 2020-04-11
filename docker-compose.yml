@@ -3,12 +3,17 @@ services:
     django:
         build:
             context: .
-            dockerfile: django.Dockerfile
+            dockerfile: django.dev.Dockerfile
         volumes:
         - .:/neetcode/
         ports:
         - "8000:8000"
         restart: on-failure
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "200k"
+                max-file: "10"
     webpack:
         build:
             context: .
@@ -16,3 +21,9 @@ services:
         volumes:
             - .:/neetcode/
         restart: on-failure
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "200k"
+                max-file: "10"
+    

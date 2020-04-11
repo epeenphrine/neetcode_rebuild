@@ -5,7 +5,7 @@ const navbarStyle = {
   fontSize: "20px"
 };
 const logoStyle = {
-  fontSize: "30px"
+  fontSize: "50px"
 };
 
 export class Navbar extends Component {
@@ -50,6 +50,7 @@ export class Navbar extends Component {
                   Disabled
                 </a>
               </div>
+              
             </div>
           </div>
         </nav>

@@ -5,6 +5,13 @@
 __pycache__
 db.sqlite3
 media
+static
+prod_secret.py
+
+#node and pipenv
+Pipfile
+Pipfile.lock
+*.json
 
 # Backup files # 
 *.bak 

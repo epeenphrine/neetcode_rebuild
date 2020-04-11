@@ -31,14 +31,14 @@ export class About extends Component {
     return (
       <div>
         <section className="jumbotron text-center bg-light">
-            <h1 className='font-weight-bold'>contact me</h1>
-            <h3>Email: donghyunwon610@gmail.com</h3>
-            <h3>Phone: 646-580-7514</h3>
-            <h3>
-              GitHub: <a href="https://github.com/epeenphrine">https://github.com/epeenphrine</a>
-            </h3>
-            <p className="lead my-5">
-              I am a developer with experience in  backend, frontend, and deployment technologies. I've listed Technologies/Languages/Libraries i'm familiar with.
+          <h1 >contact me</h1>
+          <h3 >Email: donghyunwon610@gmail.com</h3>
+          <h3>Phone: 646-580-7514</h3>
+          <h3>
+            GitHub: <a href="https://github.com/epeenphrine">https://github.com/epeenphrine</a>
+          </h3>
+          <p className="lead my-5">
+            I am a developer with experience in  backend, frontend, and deployment technologies. I've listed Technologies/Languages/Libraries i'm familiar with.
             </p>
         </section>
         {roles}

@@ -3,14 +3,14 @@ from knox.models import AuthToken
 from rest_framework.response import Response
 
 from collections import namedtuple
-from .models import Data, ItemsToScrape, About, ProjectsContent
+from .models import Data, ItemsToScrape, About, Project
 from .serializers import UserSerializer, RegisterSerializer, LoginSerializer, DataSerializer, AboutSerializer, ProjectSerializer
 ## VIEWSETS only get requests 
 #data viewset
 class DataViewset(viewsets.ModelViewSet):
     queryset = Data.objects.all()
     permission_classes= [
-        permissions.AllowAny
+        permissions
     ]
 
     serializer_class = DataSerializer
@@ -26,7 +26,7 @@ class AboutViewset(viewsets.ModelViewSet):
 
 #Project viewset
 class ProjectViewset(viewsets.ModelViewSet):
-  queryset = ProjectsContent.objects.all()
+  queryset = Project.objects.all()
   permission_class = [
     permissions.AllowAny
   ]

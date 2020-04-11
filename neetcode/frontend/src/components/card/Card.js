@@ -3,17 +3,18 @@ import React, { Component } from "react";
 export class cards extends Component {
   render() {
     return (
-      <div className="card mb-4 shadow-sm">
+      <div className="card mb-4 shadow-sm bg-light text-dark ">
         <div className="card-body">
-          <p className="card-text">
+          <h2 className="card-text font-weight-normal">
             {this.props.title}
-          </p>
-          <p className="card-text">
+          </h2>
+          <h2 className="card-text">
             {this.props.content}
-          </p>
+          </h2>
           <p className="card-text">
             {this.props.publish}
           </p>
+          <img src={this.props.image} className="container" />
           <p className="card-text">
             This is a wider card with supporting text below as a natural lead-in
             to additional content. This content is a little bit longer.
