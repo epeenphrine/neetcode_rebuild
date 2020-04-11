@@ -16,3 +16,4 @@ the project uses djangorestframework as backend to server contents/files and REA
 first collectstatic: ```python neetcode/manage.py collectstatic --noinput```\
 and then run: ```docker-compose -f prod.yml```
   - this will create a nginx container and python container to run nginx and django
+  - make sure to use different secret key for production that's not used in this repo
