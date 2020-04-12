@@ -6,7 +6,8 @@ from datetime import datetime
 # Create your models here.
 ''' every time you make changes here do this:
     python manage.py makemigrations
-    python manage.py migrate'''
+    python manage.py migrate
+'''
 
 
 ## upload image 

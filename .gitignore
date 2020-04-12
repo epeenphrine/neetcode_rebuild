@@ -12,6 +12,8 @@ prod_secret.py
 Pipfile
 Pipfile.lock
 *.json
+*.csv
+*.txt
 
 # Backup files # 
 *.bak 

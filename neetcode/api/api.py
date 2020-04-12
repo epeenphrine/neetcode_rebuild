@@ -1,3 +1,6 @@
+import sys, os
+sys.path.append('.')
+
 from rest_framework import viewsets, permissions, generics
 from knox.models import AuthToken
 from rest_framework.response import Response
@@ -5,16 +8,21 @@ from rest_framework.response import Response
 from collections import namedtuple
 from .models import Data, ItemsToScrape, About, Project
 from .serializers import UserSerializer, RegisterSerializer, LoginSerializer, DataSerializer, AboutSerializer, ProjectSerializer
+
+from .scraper.amazon_scrape import amazon_scrape
+
+import subprocess
 ## VIEWSETS only get requests 
 #data viewset
 class DataViewset(viewsets.ModelViewSet):
     queryset = Data.objects.all()
     permission_classes= [
-        permissions
+        permissions.AllowAny
     ]
 
     serializer_class = DataSerializer
-    http_method_names = ['get']
+    http_method_names = ['get', 'post']
+
 #About Viewset
 class AboutViewset(viewsets.ModelViewSet):
   queryset = About.objects.all()
@@ -33,6 +41,19 @@ class ProjectViewset(viewsets.ModelViewSet):
   serializer_class = ProjectSerializer
   http_method_names = ['get']
 
+##API resposne no database
+class ScrapeApi(generics.ListAPIView):
+    def post(self,request):
+        queryset = ''
+        message = self.request.POST.get('search','')
+        print(f"Scrape Api ran with search: {message}")
+        res = amazon_scrape() ## sample_script run here returns string
+        return Response(
+            {
+                "search": message,
+                "scraped data": res
+            }
+        )
 
 ## API (authentication)
 # register api
