@@ -1,26 +1,15 @@
-const bla = {
-    chart: {
-      chart: [
-        {
-          ticker: 'spy',
-          x: '1',
-          y: '1'
-        },
-        {
-          ticker: 'spy',
-          x: '5',
-          y: '3'
-        },
-        {
-          ticker: 'googl',
-          x: '[1,2,3,4,5,6]',
-          y: '[7,8,9,10,11]'
-        }
-      ]
-    },
-    about: {
-      about: []
-    }
-  }
+import axios from 'axios'
 
-  console.log(bla.chart.chart[0].ticker)
+const state = {
+  data: []
+}
+
+const search = {
+  search: 'gtx 1080'
+}
+
+axios.post('http://localhost:8000/api/scrape', (
+  search 
+)).then( res => (
+  console.log(res)
+))

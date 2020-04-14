@@ -4,7 +4,7 @@ import axios from "axios";
 
 //components
 import Cover from "./Cover";
-import Card from "./Card"
+import Cards from "./Cards"
 import { Row } from "react-bootstrap";
 export class About extends Component {
   //type of data
@@ -21,7 +21,7 @@ export class About extends Component {
     console.log(this.state);
     const roles = this.state.roles.map(role => {
       return (
-        <Card
+        <Cards
           key={role.id}
           role={role.role}
           languages={role.languages}

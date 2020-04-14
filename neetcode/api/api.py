@@ -9,7 +9,7 @@ from collections import namedtuple
 from .models import Data, ItemsToScrape, About, Project
 from .serializers import UserSerializer, RegisterSerializer, LoginSerializer, DataSerializer, AboutSerializer, ProjectSerializer
 
-from .scraper.amazon_scrape import amazon_scrape
+from .scraper.run import scrape
 
 import subprocess
 ## VIEWSETS only get requests 
@@ -45,13 +45,13 @@ class ProjectViewset(viewsets.ModelViewSet):
 class ScrapeApi(generics.ListAPIView):
     def post(self,request):
         queryset = ''
-        message = self.request.POST.get('search','')
-        print(f"Scrape Api ran with search: {message}")
-        res = amazon_scrape() ## sample_script run here returns string
+        search = self.request.POST.get('search','')
+        print(f"Scrape Api ran with search: {search}")
+        res = scrape(search) ## sample_script run here returns string
         return Response(
             {
-                "search": message,
-                "scraped data": res
+                "search": search,
+                "scraped": res
             }
         )
 

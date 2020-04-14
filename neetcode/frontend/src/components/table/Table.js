@@ -10,20 +10,22 @@ export class Table extends Component {
             <thead>
               <tr>
                 <th>#</th>
-                <th>Header</th>
-                <th>Header</th>
-                <th>Header</th>
-                <th>Header</th>
+                <th>Amazon</th>
+                <th>NewEgg</th>
+                <th>walmart</th>
+                <th>baba</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1,001</td>
-                <td>Lorem</td>
-                <td>ipsum</td>
-                <td>dolor</td>
-                <td>sit</td>
-              </tr>
+              <tc>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+              </tc>
               <tr>
                 <td>1,002</td>
                 <td>amet</td>
