@@ -38,7 +38,7 @@ class Chart extends React.Component {
     })
 
     return (
-      <div className="row">
+      <div className="row" style={{paddingTop: "50px"}}>
           <Search />
           {charts}
       </div>

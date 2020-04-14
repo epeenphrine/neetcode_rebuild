@@ -56,6 +56,7 @@ def amazon_scrape(search):
     amazon['id'] = 1
     amazon['ecommerce'] = 'amazon'
     amazon['items'] = items
+    amazon['url'] = url 
     amazon['links'] = links
     amazon['prices'] = prices
     amazon['numbers'] = numbers 

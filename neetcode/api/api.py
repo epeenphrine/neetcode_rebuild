@@ -6,8 +6,8 @@ from knox.models import AuthToken
 from rest_framework.response import Response
 
 from collections import namedtuple
-from .models import Data, ItemsToScrape, About, Project
-from .serializers import UserSerializer, RegisterSerializer, LoginSerializer, DataSerializer, AboutSerializer, ProjectSerializer
+from .models import Data, ItemsToScrape, About, Project, ImageUpload
+from .serializers import UserSerializer, RegisterSerializer, LoginSerializer, DataSerializer, AboutSerializer, ProjectSerializer,ImageUploadSerilializer
 
 from .scraper.run import scrape
 
@@ -21,7 +21,7 @@ class DataViewset(viewsets.ModelViewSet):
     ]
 
     serializer_class = DataSerializer
-    http_method_names = ['get', 'post']
+    http_method_names = ['get']
 
 #About Viewset
 class AboutViewset(viewsets.ModelViewSet):
@@ -41,13 +41,23 @@ class ProjectViewset(viewsets.ModelViewSet):
   serializer_class = ProjectSerializer
   http_method_names = ['get']
 
+#Image Upload viewset
+class ImageViewset(viewsets.ModelViewSet):
+  queryset = ImageUpload.objects.all()
+  permission_classes = [
+    permissions.AllowAny
+  ]
+  serializer_class = ImageUploadSerilializer
+  http_method_names = ['get']
+
 ##API resposne no database
 class ScrapeApi(generics.ListAPIView):
     def post(self,request):
         queryset = ''
         search = self.request.POST.get('search','')
-        print(f"Scrape Api ran with search: {search}")
-        res = scrape(search) ## sample_script run here returns string
+        print(f'{self.request.POST}')
+        print(f"ScrapeApi running with search: {search}")
+        res = scrape(search) ## return dictionary
         return Response(
             {
                 "search": search,
@@ -90,4 +100,4 @@ class UserAPI(generics.RetrieveAPIView):
   serializer_class = UserSerializer
 
   def get_object(self):
-    return self.request.user
+    return self.request.user  

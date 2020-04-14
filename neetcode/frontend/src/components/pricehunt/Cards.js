@@ -1,14 +1,32 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function Cards() {
-    return (
-        <div className="row">
-            <div class="card" >
-                <img class="card-img-top" src="..." alt="Card image cap" />
-                <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+export class Cards extends Component {
+    render() {
+
+        return (
+                <div className="card mb-4 shadow-sm bg-light" style={{ marginLeft: "20px" }}>
+                    <a href={this.props.url} className="text-dark">
+                        <div className="card-body">
+
+                            <h1 className="card-text font-weight-bold">
+                                {this.props.company}
+                            </h1>
+                            <h2 className='text-dark '>
+                                Average Price:
+                    </h2>
+                            <h2 className="text-dark ">
+                                ${this.props.average}
+                            </h2>
+                            <p className="card-text">
+                            </p>
+                            <p className="card-text">
+                            </p>
+                        </div>
+                    </a>
                 </div>
-            </div>
-        </div>
-    )
+        )
+    }
 }
+
+export default Cards
+

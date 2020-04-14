@@ -13,7 +13,7 @@ export class Navbar extends Component {
     return (
       <div>
         <nav
-          className="navbar navbar-expand-lg navbar-dark bg-dark"
+          className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
           style={navbarStyle}
         >
           <div className="container">
@@ -43,14 +43,11 @@ export class Navbar extends Component {
                 <a className="nav-item nav-link current" href="/about">
                   about/contact
                 </a>
-                <a className="nav-item nav-link current" href="/chart">
-                  Demo
-                </a>
                 <a className="nav-item nav-link disabled" href="#">
                   Disabled
                 </a>
               </div>
-              
+
             </div>
           </div>
         </nav>

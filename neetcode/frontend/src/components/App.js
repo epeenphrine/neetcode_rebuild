@@ -19,6 +19,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "../store";
 
+
+const body = {
+  paddingTop: "100px"
+}
+
+
 export class App extends Component {
   render() {
     return (
@@ -27,15 +33,17 @@ export class App extends Component {
           <Fragment>
             <div className="app">
               <Navbar />
+              <div style={body}>
                 <Switch>
                   <Route exact path="/" component={Home} />
                   <Route path="/about" component={About} />
                   <Route path="/chart" exact component={Chart} />
-                  <Route path='/dash' exact component ={Dashboard} />
-                  <Route path='/app/price_hunt' exact component ={PriceHunt} />
+                  <Route path='/dash' exact component={Dashboard} />
+                  <Route path='/app/price_hunt' exact component={PriceHunt} />
                   <Route path='/table' exact component={Table} />
                 </Switch>
               </div>
+            </div>
           </Fragment>
         </Router>
       </Provider>

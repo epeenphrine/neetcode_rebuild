@@ -58,6 +58,7 @@ def baba_scrape(search):
     baba['id'] = 2
     baba['ecommerce'] = 'baba'
     baba['items'] = items
+    baba['url'] = url
     baba['links'] = links
     baba['prices'] = prices
     baba['numbers'] = numbers 

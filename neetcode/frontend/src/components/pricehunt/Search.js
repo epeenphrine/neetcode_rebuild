@@ -40,7 +40,7 @@ export class Search extends Component {
     if (haveData) {
       stuff = <h2> hello ! we have data</h2>
     } else {
-      stuff = <h2>we don't have data</h2>
+      stuff = <h2 className='text-center'>we don't have data</h2>
     }
     return (
       <div>

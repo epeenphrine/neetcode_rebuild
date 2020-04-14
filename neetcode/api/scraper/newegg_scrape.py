@@ -56,6 +56,7 @@ def newegg_scrape(search):
     newegg['id'] = 4
     newegg['ecommerce'] = 'newegg'
     newegg['items'] = items
+    newegg['url'] = url 
     newegg['links'] = links
     newegg['prices'] = prices
     newegg['numbers'] = numbers 

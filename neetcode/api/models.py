@@ -50,6 +50,8 @@ class Project(models.Model):
     language = models.CharField(max_length=200, default=1)
     url_slug = models.CharField(max_length=200, default=1)
 
+    github = models.CharField(max_length=200, default=1)
+
     image = models.ImageField(upload_to="images")
     
     def __str__(self):

@@ -82,6 +82,7 @@ def walmart_scrape(search):
     walmart['id'] = 5
     walmart['ecommerce'] = 'walmart'
     walmart['items'] = items
+    walmart['url'] = url
     walmart['links'] = links
     walmart['prices'] = prices
     walmart['numbers'] = numbers 

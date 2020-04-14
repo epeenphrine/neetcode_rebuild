@@ -56,6 +56,7 @@ def ebay_scrape(search):
     ebay['id'] = 3
     ebay['ecommerce'] = 'ebay'
     ebay['items'] = items
+    ebay['url'] = url
     ebay['links'] = links
     ebay['prices'] = prices
     ebay['numbers'] = numbers 
