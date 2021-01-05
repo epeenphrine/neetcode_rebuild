@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "acorn": ">=6.4.1",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "minimist": ">=1.2.3",
     "plotly.js": "^1.52.1",
