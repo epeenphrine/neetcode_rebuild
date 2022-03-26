@@ -26,7 +26,7 @@
     "acorn": ">=6.4.1",
     "axios": "^0.18.1",
     "bootstrap": "^4.4.1",
-    "minimist": ">=1.2.3",
+    "minimist": ">=1.2.6",
     "plotly.js": "^1.52.1",
     "prop-types": "^15.7.2",
     "qs": "^6.9.3",
